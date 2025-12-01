@@ -1,23 +1,22 @@
-# Simulador_SO_MA2
-Trabalho Pratico de Sistemas Operacionais - Prof. Maurício Acconcia Dias.
 ## Diagrama do Sistema
 
+```mermaid
 graph TD
     subgraph "Kernel do SO"
-        SO["Sistema Operacional<br/>(Loop Principal)"]
-        MEM["Gerenciador de Memória<br/>(Paginação/Frames)"]
-        SCHED["Escalonador<br/>(Interface IEscalonador)"]
-        PCB["Tabela de Processos<br/>(PCBs)"]
+        SO[Sistema Operacional<br/>(Loop Principal)]
+        MEM[Gerenciador de Memória<br/>(Paginação/Frames)]
+        SCHED[Escalonador<br/>(Interface IEscalonador)]
+        PCB[Tabela de Processos<br/>(PCBs)]
     end
 
     subgraph "Hardware Simulado"
-        CPU{"CPU"}
-        IO["Dispositivo de I/O<br/>(Fila de Espera)"]
+        CPU{CPU}
+        IO[Dispositivo de I/O<br/>(Fila de Espera)]
     end
 
     subgraph "Algoritmos"
-        FCFS["Escalonador FCFS"]
-        RR["Escalonador Round Robin"]
+        FCFS[Escalonador FCFS]
+        RR[Escalonador Round Robin]
     end
 
     SO -->|Gerencia| PCB
@@ -31,3 +30,4 @@ graph TD
     CPU -->|Interrupção de Timer| SCHED
     CPU -->|Solicitação de I/O| IO
     IO -->|Conclusão de I/O| SCHED
+```
