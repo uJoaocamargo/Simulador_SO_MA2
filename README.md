@@ -1,3 +1,4 @@
+```mermaid
 graph TD
     subgraph "Kernel do SO"
         SO["Sistema Operacional<br/>(Loop Principal)"]
@@ -27,3 +28,4 @@ graph TD
     CPU -->|Interrupção de Timer| SCHED
     CPU -->|Solicitação de I/O| IO
     IO -->|Conclusão de I/O| SCHED
+```
