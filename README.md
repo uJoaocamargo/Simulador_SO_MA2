@@ -29,3 +29,12 @@ graph TD
     CPU -->|Solicitação de I/O| IO
     IO -->|Conclusão de I/O| SCHED
 ```
+*********************************************************************************************************************************************************************************************************************
+
+stateDiagram-v2
+    [*] --> Novo: Criação
+    Novo --> Pronto: Admissão (Memória OK)
+    Pronto --> Executando: Dispatcher
+    Executando --> Pronto: Interrupção (Quantum)
+    Executando --> Terminado: Fim da Execução
+    Terminado --> [*]: Desalocação
